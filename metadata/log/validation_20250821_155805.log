@@ -1,0 +1,11 @@
+2025-08-21 15:58:05 - INFO - Logging initialized. Project Root: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143
+2025-08-21 15:58:05 - INFO - Log files will be saved to: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\metadata\log
+2025-08-21 15:58:05 - INFO - Raw data will be saved to: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\3.Rawdata
+2025-08-21 15:58:05 - INFO - The shape of the data is (7043, 21)
+2025-08-21 15:58:05 - INFO - The columns  of the telecom customer churn data  is Index(['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents',
+       'tenure', 'PhoneService', 'MultipleLines', 'InternetService',
+       'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
+       'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling',
+       'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn'],
+      dtype='object')
+2025-08-21 15:58:05 - INFO - No of Duplicate rows of data found  0
