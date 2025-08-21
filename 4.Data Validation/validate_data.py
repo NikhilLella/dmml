@@ -48,9 +48,7 @@ def validate_data(df: pd.DataFrame, dataset_name: str, output_dir="data_quality_
     # 1. Missing values
     missing_values = df.isnull().sum()
     for col, count in missing_values.items():
-        if count > 0:
-            report_rows.append(["Missing Values", col, count])
-
+        report_rows.append(["Missing Values", col, count])
     logging.info("Missing values check complete.")
 
     # 2. Duplicates
@@ -61,7 +59,6 @@ def validate_data(df: pd.DataFrame, dataset_name: str, output_dir="data_quality_
     # 3. Data types
     for col, dtype in df.dtypes.astype(str).items():
         report_rows.append(["Data Type", col, dtype])
-
     logging.info("Data types check complete.")
 
     # 4. Numeric ranges (check negative values)
@@ -79,7 +76,7 @@ def validate_data(df: pd.DataFrame, dataset_name: str, output_dir="data_quality_
             anomaly_count = int((np.abs(z_scores) > 3).sum())
             if anomaly_count > 0:
                 logging.warning("Anomalies detected...... in the data")
-                report_rows.append(["Anomalies", col, anomaly_count])
+            report_rows.append(["Anomalies", col, anomaly_count])
 
     logging.info("Anomaly detection complete.")
 

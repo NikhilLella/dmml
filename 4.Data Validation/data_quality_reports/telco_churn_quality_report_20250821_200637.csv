@@ -1,0 +1,47 @@
+Check,Column,Details
+Missing Values,customerID,0
+Missing Values,gender,0
+Missing Values,SeniorCitizen,0
+Missing Values,Partner,0
+Missing Values,Dependents,0
+Missing Values,tenure,0
+Missing Values,PhoneService,0
+Missing Values,MultipleLines,0
+Missing Values,InternetService,0
+Missing Values,OnlineSecurity,0
+Missing Values,OnlineBackup,0
+Missing Values,DeviceProtection,0
+Missing Values,TechSupport,0
+Missing Values,StreamingTV,0
+Missing Values,StreamingMovies,0
+Missing Values,Contract,0
+Missing Values,PaperlessBilling,0
+Missing Values,PaymentMethod,0
+Missing Values,MonthlyCharges,0
+Missing Values,TotalCharges,0
+Missing Values,Churn,0
+Duplicate Rows,all_columns,0
+Data Type,customerID,object
+Data Type,gender,object
+Data Type,SeniorCitizen,int64
+Data Type,Partner,object
+Data Type,Dependents,object
+Data Type,tenure,int64
+Data Type,PhoneService,object
+Data Type,MultipleLines,object
+Data Type,InternetService,object
+Data Type,OnlineSecurity,object
+Data Type,OnlineBackup,object
+Data Type,DeviceProtection,object
+Data Type,TechSupport,object
+Data Type,StreamingTV,object
+Data Type,StreamingMovies,object
+Data Type,Contract,object
+Data Type,PaperlessBilling,object
+Data Type,PaymentMethod,object
+Data Type,MonthlyCharges,float64
+Data Type,TotalCharges,object
+Data Type,Churn,object
+Anomalies,SeniorCitizen,0
+Anomalies,tenure,0
+Anomalies,MonthlyCharges,0
