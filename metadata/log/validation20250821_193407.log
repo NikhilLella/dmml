@@ -1,0 +1,9 @@
+2025-08-21 19:34:07 - INFO - Logging initialized. Project Root: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143
+2025-08-21 19:34:07 - INFO - Log files will be saved to: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\metadata\log
+2025-08-21 19:34:07 - INFO - Starting data validation for dataset: telco_churn
+2025-08-21 19:34:07 - INFO - Missing values check complete.
+2025-08-21 19:34:07 - INFO - Duplicate rows check complete.
+2025-08-21 19:34:07 - INFO - Data types check complete.
+2025-08-21 19:34:07 - INFO - Numeric range check complete.
+2025-08-21 19:34:07 - INFO - Anomaly detection complete.
+2025-08-21 19:34:07 - INFO -  Data Quality Report saved at data_quality_reports/telco_churn_quality_report_20250821_193407.csv

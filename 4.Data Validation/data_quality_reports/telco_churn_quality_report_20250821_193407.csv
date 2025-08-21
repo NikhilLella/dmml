@@ -1,0 +1,23 @@
+Check,Column,Details
+Duplicate Rows,all_columns,0
+Data Type,customerID,object
+Data Type,gender,object
+Data Type,SeniorCitizen,int64
+Data Type,Partner,object
+Data Type,Dependents,object
+Data Type,tenure,int64
+Data Type,PhoneService,object
+Data Type,MultipleLines,object
+Data Type,InternetService,object
+Data Type,OnlineSecurity,object
+Data Type,OnlineBackup,object
+Data Type,DeviceProtection,object
+Data Type,TechSupport,object
+Data Type,StreamingTV,object
+Data Type,StreamingMovies,object
+Data Type,Contract,object
+Data Type,PaperlessBilling,object
+Data Type,PaymentMethod,object
+Data Type,MonthlyCharges,float64
+Data Type,TotalCharges,object
+Data Type,Churn,object
