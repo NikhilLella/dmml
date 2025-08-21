@@ -1,15 +1,33 @@
 import os
+import sys
 import logging
 import subprocess
-from datasets import load_dataset
 from datetime import datetime
+from pathlib import Path
+from datasets import load_dataset
+import pandas as pd
 
-# Create logs directory if it doesn’t exist
-os.makedirs("logs", exist_ok=True)
+# --- Dynamic Path Configuration ---
+# This automatically finds the project root directory (dmml) from the script's location
+# Path(__file__) is the path to this script (dmml/ingest/myPython.py)
+# .parent is the directory of the script (dmml/ingest)
+# .parent.parent is the project root (dmml)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-# Create timestamped log file
+# Define the correct output directories based on the project root
+LOG_DIR = PROJECT_ROOT / "metadata" / "log"
+RAW_DATA_DIR = PROJECT_ROOT / "3.Rawdata"
+KAGGLE_OUTPUT_DIR = RAW_DATA_DIR / "kaggle"
+HF_OUTPUT_DIR = RAW_DATA_DIR / "huggingface"
+
+# Create all necessary directories
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+KAGGLE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+HF_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# --- Setup Logging ---
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-log_filename = f"logs/ingestion_{timestamp}.log"
+log_filename = LOG_DIR / f"ingestion_{timestamp}.log"
 
 # Handlers
 file_handler = logging.FileHandler(log_filename)
@@ -25,18 +43,13 @@ console_handler.setFormatter(formatter)
 # Root logger
 logging.basicConfig(level=logging.INFO, handlers=[file_handler, console_handler])
 
-logging.info("Logging initialized with both file + console handlers")
+logging.info(f"Logging initialized. Project Root: {PROJECT_ROOT}")
+logging.info(f"Log files will be saved to: {LOG_DIR}")
+logging.info(f"Raw data will be saved to: {RAW_DATA_DIR}")
 
-# --- Config ---
+# --- Configuration ---
 KAGGLE_DATASET_ID = "blastchar/telco-customer-churn"
 HUGGINGFACE_DATASET_ID = "aai510-group1/telco-customer-churn"
-
-KAGGLE_OUTPUT_DIR = "raw_data/kaggle"
-HF_OUTPUT_DIR = "raw_data/huggingface"
-
-os.makedirs(KAGGLE_OUTPUT_DIR, exist_ok=True)
-os.makedirs(HF_OUTPUT_DIR, exist_ok=True)
-
 
 def download_from_kaggle(dataset_id: str, path: str):
     """Download Kaggle dataset using API"""
@@ -56,15 +69,13 @@ def download_from_kaggle(dataset_id: str, path: str):
     except subprocess.CalledProcessError as e:
         logging.error(f"Kaggle download failed: {e.stderr}")
 
-
-def download_from_huggingface(dataset_id: str, output_dir: str):
+def download_from_huggingface(dataset_id: str, output_dir: Path):
     """Download HuggingFace dataset and save as CSV"""
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     try:
         logging.info(f"Starting HuggingFace ingestion for {dataset_id}")
         dataset = load_dataset(dataset_id)
         df = dataset["train"].to_pandas()
-        output_file = os.path.join(output_dir, f"hf_churn.csv")
+        output_file = output_dir / "hf_churn.csv"
         df.to_csv(output_file, index=False)
         logging.info(f"HuggingFace dataset saved to {output_file}, rows={len(df)}")
         return df
@@ -72,10 +83,7 @@ def download_from_huggingface(dataset_id: str, output_dir: str):
         logging.error(f"HuggingFace ingestion failed: {e}")
         return None
 
-
-# --- Run ingestion ---
 # --- Main Execution ---
 if __name__ == "__main__":
-     download_from_kaggle(KAGGLE_DATASET_ID, KAGGLE_OUTPUT_DIR)
-     download_from_huggingface(HUGGINGFACE_DATASET_ID, HF_OUTPUT_DIR)
-
+    download_from_kaggle(KAGGLE_DATASET_ID, KAGGLE_OUTPUT_DIR)
+    download_from_huggingface(HUGGINGFACE_DATASET_ID, HF_OUTPUT_DIR)

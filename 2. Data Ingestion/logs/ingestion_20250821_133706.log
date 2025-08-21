@@ -1,5 +1,0 @@
-2025-08-21 13:37:06 - INFO - Logging initialized with both file + console handlers
-2025-08-21 13:37:06 - INFO - Starting Kaggle ingestion for blastchar/telco-customer-churn
-2025-08-21 13:37:09 - INFO - Kaggle dataset blastchar/telco-customer-churn successfully downloaded to raw_data/kaggle/ at 20250821_133706
-2025-08-21 13:37:09 - INFO - Starting HuggingFace ingestion for aai510-group1/telco-customer-churn
-2025-08-21 13:37:14 - INFO - HuggingFace dataset saved to raw_data/huggingface\hf_churn.csv, rows=4225

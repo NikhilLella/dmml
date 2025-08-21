@@ -1,0 +1,8 @@
+2025-08-21 15:13:24 - INFO - Logging initialized. Project Root: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143
+2025-08-21 15:13:24 - INFO - Log files will be saved to: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\metadata\log
+2025-08-21 15:13:24 - INFO - Raw data will be saved to: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\3.Rawdata
+2025-08-21 15:13:24 - INFO - Starting Kaggle ingestion for blastchar/telco-customer-churn
+2025-08-21 15:13:25 - ERROR - Kaggle download failed: C:\Users\NikhileswarLella\AppData\Local\Programs\Python\Python313\python.exe: No module named kaggle.__main__; 'kaggle' is a package and cannot be directly executed
+
+2025-08-21 15:13:25 - INFO - Starting HuggingFace ingestion for aai510-group1/telco-customer-churn
+2025-08-21 15:13:30 - INFO - HuggingFace dataset saved to C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\3.Rawdata\huggingface\hf_churn.csv, rows=4225

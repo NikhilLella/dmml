@@ -1,0 +1,7 @@
+2025-08-21 15:16:27 - INFO - Logging initialized. Project Root: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143
+2025-08-21 15:16:27 - INFO - Log files will be saved to: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\metadata\log
+2025-08-21 15:16:27 - INFO - Raw data will be saved to: C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\3.Rawdata
+2025-08-21 15:16:27 - INFO - Starting Kaggle ingestion for blastchar/telco-customer-churn
+2025-08-21 15:16:30 - INFO - Kaggle dataset blastchar/telco-customer-churn successfully downloaded to C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\3.Rawdata\kaggle/ at 20250821_151627
+2025-08-21 15:16:30 - INFO - Starting HuggingFace ingestion for aai510-group1/telco-customer-churn
+2025-08-21 15:16:34 - INFO - HuggingFace dataset saved to C:\Users\NikhileswarLella\Documents\BITS\DMML-assignment-group-143\3.Rawdata\huggingface\hf_churn.csv, rows=4225
